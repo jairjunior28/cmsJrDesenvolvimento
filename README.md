@@ -69,31 +69,23 @@ JR Desenvolvimento CMS nativamente possui suporte a [Google Analytics](http://ww
 3. Ative o Google Analytics em `config/analytics.php`.
 
 
-## Configurando CloudFlare Analytics
-
-JR Desenvolvimento CMS  can read [CloudFlare](https://www.cloudflare.com/) analytic data through a package.
-
-1. Follow the install instructions for my [Laravel CloudFlare](https://github.com/BootstrapCMS/CloudFlare) package.
-2. Bootstrap CMS will auto-detect the package, only allow admin access, and add links to the navigation bar.
-
 
 ## License
 
 GNU AFFERO GENERAL PUBLIC LICENSE
 
-Bootstrap CMS Is A PHP CMS Powered By Laravel 5 And Sentry
+JR Desenvolvimento CMS escrito em  PHP com o framework Laravel 5 e Sentry
 
-Copyright (C) 2013-2015 Graham Campbell
+Copyright (C) 2013-2015 Jair Júnior
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Este programa é software livre: você pode redistribuí-lo e / ou modificá
+-lo sob os termos da GNU Affero General Public License conforme publicada pela
+Free Software Foundation, tanto a versão 3 da licença, ou
+(A seu critério) qualquer versão posterior.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Este programa é distribuído na esperança que possa ser útil,
+mas SEM QUALQUER GARANTIA; mesmo sem a garantia implícita de
+COMERCIALIZAÇÃO ou ADEQUAÇÃO A UM DETERMINADO FIM. veja a
+Licença Pública GNU Affero General para mais detalhes.
+Você pode obter uma cópia da Licença Pública Geral GNU Affero
+ em <http://www.gnu.org/licenses/>.
