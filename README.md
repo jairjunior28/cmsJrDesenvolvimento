@@ -1,9 +1,9 @@
-Bootstrap CMS
-=============
+Jr Desenvolvimento CMS
+=======================
 
-Bootstrap CMS was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a PHP CMS powered by [Laravel 5.1](http://laravel.com) and [Sentry](https://cartalyst.com/manual/sentry). It utilises many of my packages including [Laravel Core](https://github.com/GrahamCampbell/Laravel-Core) and [Laravel Credentials](https://github.com/BootstrapCMS/Credentials). Feel free to check out the [releases](https://github.com/BootstrapCMS/CMS/releases), [license](LICENSE), [screenshots](SCREENSHOTS.md), and [contribution guidelines](CONTRIBUTING.md).
+Jr Desenvolvimento CMS foi desenvolvido e é mantido por  [Jair Júnior](https://github.com/jairjunior28), trata se de um sistema CMS escrito em PHP utilizando se do framework [Laravel 5.1](http://laravel.com) e [Sentry](https://cartalyst.com/manual/sentry). Ele utiliza também muitos pacotes de terceiros tais como [Laravel Core](https://github.com/GrahamCampbell/Laravel-Core) e [Laravel Credentials](https://github.com/BootstrapCMS/Credentials). Sinta se livre a verificar. [releases](https://github.com/BootstrapCMS/CMS/releases), [license](LICENSE), [screenshots](SCREENSHOTS.md), and [contribution guidelines](CONTRIBUTING.md).
 
-![Bootstrap CMS](https://cloud.githubusercontent.com/assets/2829600/4432327/c1ae6436-468c-11e4-84eb-4e5e546da3ff.PNG)
+![JR Desenvolvimento CMS]()
 
 <p align="center">
 <a href="https://travis-ci.org/BootstrapCMS/CMS"><img src="https://img.shields.io/travis/BootstrapCMS/CMS/master.svg?style=flat-square" alt="Build Status"></img></a>
@@ -14,65 +14,64 @@ Bootstrap CMS was created by, and is maintained by [Graham Campbell](https://git
 </p>
 
 
-## Installation
+## Instalação
 
-[PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+, a database server, and [Composer](https://getcomposer.org) are required.
+[PHP](https://php.net) 5.5+ ou superior [HHVM](http://hhvm.com) 3.6+, um servidor de banco de dados, e [Composer](https://getcomposer.org) são necessários.
 
-1. There are 3 ways of grabbing the code:
-  * Use GitHub: simply download the zip on the right of the readme
-  * Use Git: `git clone git@github.com:BootstrapCMS/CMS.git`
-  * Use Composer: `composer create-project graham-campbell/bootstrap-cms --prefer-dist -s dev`
-2. From a command line open in the folder, run `composer install --no-dev -o` and then `npm install`.
-3. Enter your database details into `config/database.php`.
-4. Run `php artisan app:install` followed by `gulp --production` to setup the application.
-5. You will need to enter your mail server details into `config/mail.php`.
-  * You can disable verification emails in `config/credentials.php`
-  * Mail is still required for other functions like password resets and the contact form
-  * You must set the contact email in `config/contact.php`
-  * I'd recommend [queuing](#setting-up-queing) email sending for greater performance (see below)
-6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
-  * For development, you can simply run `php artisan serve`
-
-
-## Setting Up Queuing
-
-Bootstrap CMS uses Laravel's queue system to offload jobs such as sending emails so your users don't have to wait for these activities to complete before their pages load. By default, we're using the "sync" queue driver.
-
-1. Check out Laravel's [documentation](http://laravel.com/docs/master/queues#configuration).
-2. Enter your queue server details into `config/queue.php`.
+1. Existem três maneiras de obter o código:
+  * Usando GitHub: basta baixar o zip na direita do readme.
+  * Usando Git: `git clone https://github.com/jairjunior28/cmsJrDesenvolvimento/`
+  * Usando Composer: `composer create-project jairjunior28/cmsJrDesenvolvimento --prefer-dist -s dev`
+2. Em linha de comando na pasta do projeto, rodar o comando `composer install --no-dev -o` e após `npm install`.
+3. Ajustar o arquivo de acordo com a configuração do banco de dados `config/database.php`.
+4. Executar o comando `php artisan app:install` após  `gulp --production` para configurar a aplicação.
+5. Agora é necessário ajustar as configurações referentes a e-mail `config/mail.php`.
+  * Pode ser desativado, caso for o caso em  `config/credentials.php`
+  * Emailé necessário para outras funções como redefinições de senha e do formulário de contato
+  * Você deve definir o e-mail de contato no `config/contact.php`
+  * Eu recomendo [filas] (#-criação de filas) envio de emails para maior desempenho (ver abaixo)
+6. Finalmente, configurar uma [Apache VirtualHost] (http://httpd.apache.org/docs/current/vhosts/examples.html) para apontar para a pasta "pública".
+  * Para desenvolvimento, você pode simplemente rodar o comando  `php artisan serve`
 
 
-## Setting Up Caching
+## Configurando filas
 
-Bootstrap CMS provides caching functionality, and when enabled, requires a caching server.
-Note that caching will not work with Laravel's `file` or `database` cache drivers.
-
-1. Choose your poison - I'd recommend [Redis](http://redis.io).
-2. Enter your cache server details into `config/cache.php`.
-3. Setting the driver to array will effectively disable caching if you don't want the overhead.
+JR Desenvolvimento CMS usa o sistema de fila de Laravel para descarregar tarefas como enviar e-mails para que seus usuários não têm que esperar para essas atividades para concluir antes de sua carga de páginas. Por padrão, estamos usando o "sync" driver de fila.
+1. Verifique a documentação do Laravel's [documentação](http://laravel.com/docs/master/queues#configuration).
+2. Digite os detalhes do servidor de filas em `config/queue.php`.
 
 
-## Setting Up Themes
+## Configurando Caching
 
-Bootstrap CMS also ships with 18 themes, 16 from [Bootswatch](http://bootswatch.com).
-
-1. You can set your theme in `config/theme.php`.
-2. You can also set your navbar style in `config/theme.php`.
-3. After making theme changes, you will have to run `php artisan app:update`.
+JR Desenvolvimento CMS fornece funcionalidade de armazenamento em cache, e quando ativado, requer um servidor de cache.
+Note que o cache não irá funcionar com Laravel `file` ou` database` controladores de cache.
 
 
-## Setting Up Google Analytics
-
-Bootstrap CMS natively supports [Google Analytics](http://www.google.com/analytics).
-
-1. Setup a web property on [Google Analytics](http://www.google.com/analytics).
-2. Enter your tracking id into `config/analytics.php`.
-3. Enable Google Analytics in `config/analytics.php`.
+2. Digite os detalhes do servidor de cache em `config/cache.php`.
+3. Definir o controlador de matriz irá efetivamente desativar caching se você não quer que a sobrecarga.
 
 
-## Setting Up CloudFlare Analytics
+## Configurando Temas
 
-Bootstrap CMS can read [CloudFlare](https://www.cloudflare.com/) analytic data through a package.
+JR Desenvolvimento CMS também vem com 18 temas, 16 de [Bootswatch](http://bootswatch.com).
+
+1. Você pode definir o seu tema em `config/theme.php`.
+2. Você também pode definir o seu estilo barra de navegação no `config/theme.php`.
+3. Depois de fazer alterações no tema, você vai ter que rodar o comando `php artisan app:update`.
+
+
+##  Configurar o Google Analytics
+
+JR Desenvolvimento CMS nativamente possui suporte a [Google Analytics](http://www.google.com/analytics).
+
+1. Configuração uma propriedade da web sobre [Google Analytics](http://www.google.com/analytics).
+2. Digite seu ID de rastreamento em `config/analytics.php`.
+3. Ative o Google Analytics em `config/analytics.php`.
+
+
+## Configurando CloudFlare Analytics
+
+JR Desenvolvimento CMS  can read [CloudFlare](https://www.cloudflare.com/) analytic data through a package.
 
 1. Follow the install instructions for my [Laravel CloudFlare](https://github.com/BootstrapCMS/CloudFlare) package.
 2. Bootstrap CMS will auto-detect the package, only allow admin access, and add links to the navigation bar.
